@@ -16,5 +16,14 @@ texture = ExtResource("1_e5dn1")
 [node name="hitbox" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_3u2o5")
 
-[node name="player-controller" type="Node" parent="."]
+[node name="player-controller" type="Node" parent="." node_paths=PackedStringArray("default_state")]
 script = ExtResource("3_wncy2")
+default_state = NodePath("idle")
+
+[node name="idle" type="Node" parent="player-controller"]
+
+[node name="move" type="Node" parent="player-controller"]
+
+[node name="jump" type="Node" parent="player-controller"]
+
+[node name="fall" type="Node" parent="player-controller"]
