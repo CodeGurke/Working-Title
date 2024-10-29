@@ -10,7 +10,7 @@ size = Vector2(1153.5, 158.5)
 [node name="player" parent="." instance=ExtResource("1_b7yiy")]
 position = Vector2(347, 283)
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(577.25, 568.25)
