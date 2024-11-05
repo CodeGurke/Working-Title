@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bp5octkfkepoc"]
+
+[ext_resource type="Texture2D" uid="uid://5mstqy1tlfk5" path="res://src/player/parts/body/Body_Test.png" id="1_logq1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kx6d7"]
+size = Vector2(18, 26)
+
+[node name="body" type="CharacterBody2D"]
+
+[node name="Body1" type="Sprite2D" parent="."]
+position = Vector2(0, -16)
+texture = ExtResource("1_logq1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 0
+visibility_layer = 0
+position = Vector2(0, -13)
+shape = SubResource("RectangleShape2D_kx6d7")
