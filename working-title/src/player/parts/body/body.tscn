@@ -11,8 +11,9 @@ size = Vector2(18, 26)
 position = Vector2(0, -16)
 texture = ExtResource("1_logq1")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 light_mask = 0
-visibility_layer = 0
 position = Vector2(0, -13)
 shape = SubResource("RectangleShape2D_kx6d7")

@@ -17,8 +17,9 @@ texture = ExtResource("2_2aex2")
 unique_name_in_owner = true
 position = Vector2(0, -32)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 light_mask = 0
-visibility_layer = 0
 position = Vector2(0, -16)
 shape = SubResource("RectangleShape2D_lvy2k")
