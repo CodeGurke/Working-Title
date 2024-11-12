@@ -7,6 +7,7 @@
 size = Vector2(16, 32)
 
 [node name="legs" type="CharacterBody2D"]
+slide_on_ceiling = false
 script = ExtResource("1_q3q18")
 
 [node name="sprite" type="Sprite2D" parent="."]

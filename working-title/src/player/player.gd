@@ -15,7 +15,7 @@ func _ready() -> void:
 
 # movement code
 func _physics_process(delta):
-	var movement : int = Input.get_axis('move_left', 'move_right')
+	var movement : float = Input.get_axis('move_left', 'move_right')
 	var jump : bool = Input.is_action_pressed("move_up")
 	
 	velocity.x = movement * speed
