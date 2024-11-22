@@ -1,0 +1,210 @@
+{
+  "main": {
+    "id": "1c0f0d458022f87d",
+    "type": "split",
+    "children": [
+      {
+        "id": "c5944ec5e7000364",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "021037e8e35e2340",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Spiel-Inhalt/Spiel-Inhalt.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Spiel-Inhalt"
+            }
+          },
+          {
+            "id": "903e82cac8aee425",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Software/Software.md",
+                "mode": "preview",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Software"
+            }
+          }
+        ],
+        "currentTab": 1
+      },
+      {
+        "id": "ccb04161b3f3a039",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "9f2ce61af7295638",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "b5f6d320b5c21384",
+    "type": "split",
+    "children": [
+      {
+        "id": "ad1e93726e3a0f01",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "6db669a8c704525a",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "1ff80e8cb91db76b",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "bd206932e81cec27",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "931bbb3325eb090e",
+    "type": "split",
+    "children": [
+      {
+        "id": "0d557b4de6296218",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b3eaefa279416bbc",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks"
+            }
+          },
+          {
+            "id": "27ed5163761a545c",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links"
+            }
+          },
+          {
+            "id": "ff3c7994447aa341",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "380f32442beaf20e",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {},
+              "icon": "lucide-list",
+              "title": "Outline"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "903e82cac8aee425",
+  "lastOpenFiles": [
+    "Software/Software.md",
+    "Spiel-Inhalt/Spiel-Inhalt.md",
+    "Spiel-Inhalt/Spiel-Ablauf.md",
+    "Spiel-Inhalt",
+    "Working-Title.md",
+    "Team/Team.md",
+    "Team/Elisabeth.md",
+    "Team/Damian.md",
+    "Team/Arjun.md",
+    "Team",
+    "Software",
+    "Features/Bauteile/Charakter Bauer.md",
+    "Features/Bauteile",
+    "Features",
+    "Features/Features.md"
+  ]
+}
