@@ -6,3 +6,7 @@ Super Smash Bros' inspiriertes Plattform-Fighter Spiel.
 [[Team]]
 [[Features]]
 [[Spiel-Inhalt]]
+
+```
+Code block!
+```
