@@ -10,7 +10,7 @@ const SELECTED_HEAD : = preload("res://src/player/parts/head/head.tscn")
 const SELECTED_HAND_L : = preload("res://src/player/parts/hands/hand.tscn")
 const SELECTED_HAND_R : = preload("res://src/player/parts/hands/hand.tscn")
  
-# saves the instant of the part for later use
+# saves the instant of the part for later use like calling functions
 var legs : CharacterBody2D = SELECTED_LEGS.instantiate()
 var body : CharacterBody2D = SELECTED_BODY.instantiate()
 var head : CharacterBody2D = SELECTED_HEAD.instantiate()
@@ -27,10 +27,17 @@ func build_body() -> void:
 	%character.add_child(hand_l)
 	%character.add_child(hand_r)
 	
-	# sets the pieces position to the connector of the last part
+	update_position()
+
+
+func update_position() -> void:
 	body.global_position = legs.get_connector_position()
 	head.global_position = body.get_connector_position()
 	hand_l.global_position = legs.get_connector_position()
 	hand_l.global_position.x += 30
 	hand_r.global_position = legs.get_connector_position()
 	hand_r.global_position.x -= 50
+
+
+func _process(delta):
+	update_position()
