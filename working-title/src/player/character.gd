@@ -35,7 +35,7 @@ func build_body() -> void:
 	%character.add_child(hand_r)
 	
 	# connects the hurtboxes of the individual body parts to a function
-	$legs/Area2D.area_entered.connect(hitbox_entered_hurtbox.bind($legs/Area2D))
+	#$legs/Area2D.area_entered.connect(hitbox_entered_hurtbox.bind($legs/Area2D))
 	$body/Area2D.area_entered.connect(hitbox_entered_hurtbox.bind($body/Area2D))
 	$head/Area2D.area_entered.connect(hitbox_entered_hurtbox.bind($head/Area2D))
 	

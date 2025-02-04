@@ -40,4 +40,4 @@ func get_selected_parts() -> Array[PackedScene]:
 
 # this function is for testing purposeses because a character builder is not built yet
 func test_auto() -> void:
-	select_parts(preload("res://src/player/parts/legs/legs_standart.tscn"), preload("res://src/player/parts/body/body.tscn"), preload("res://src/player/parts/head/head.tscn"), preload("res://src/player/parts/hands/hand.tscn"), preload("res://src/player/parts/hands/hand.tscn"))
+	select_parts(preload("res://src/player/parts/legs/legs_test.tscn"), preload("res://src/player/parts/body/body.tscn"), preload("res://src/player/parts/head/head.tscn"), preload("res://src/player/parts/hands/hand.tscn"), preload("res://src/player/parts/hands/hand.tscn"))
