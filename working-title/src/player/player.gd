@@ -26,11 +26,10 @@ func _physics_process(delta) -> void:
 	move_and_slide()
 
 func _unhandled_input(event) -> void:
-	if event.device == input_device:
-		if event.is_action("move_left") or event.is_action("move_right"):
-			velocity.x = Input.get_axis('move_left', 'move_right') * speed
-		if event.is_action("move_up") and self.is_on_floor():
-			velocity.y = jump_force
+	if event.is_action("move_left_"+str(input_device)) or event.is_action("move_right_"+str(input_device)):
+		velocity.x = Input.get_axis('move_left_'+str(input_device), 'move_right_'+str(input_device)) * speed
+	if event.is_action("move_up_"+str(input_device)) and self.is_on_floor():
+		velocity.y = jump_force
 	
 
 func select_parts(legs : PackedScene, body : PackedScene, head : PackedScene, hand_l : PackedScene, hand_r : PackedScene) -> void:

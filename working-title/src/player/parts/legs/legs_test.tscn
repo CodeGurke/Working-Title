@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://dnsaveoo4fsbi"]
 
-[ext_resource type="Script" path="res://src/player/parts/legs/legs.gd" id="1_wcdom"]
+[ext_resource type="Script" uid="uid://cau4c2mkpc4vc" path="res://src/player/parts/legs/legs.gd" id="1_wcdom"]
 [ext_resource type="Texture2D" uid="uid://biokj278x2sp0" path="res://src/player/parts/legs/Legs_Test.png" id="2_4wjsg"]
-[ext_resource type="Script" path="res://src/player/parts/hurtbox.gd" id="3_kvink"]
+[ext_resource type="Script" uid="uid://kwgsn8gks77j" path="res://src/player/parts/hurtbox.gd" id="3_kvink"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lvy2k"]
 size = Vector2(16, 32)
@@ -16,8 +16,8 @@ loop_mode = 1
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wvhxk"]
 _data = {
-"RESET": SubResource("Animation_5ykwg"),
-"idle": SubResource("Animation_qkfsl")
+&"RESET": SubResource("Animation_5ykwg"),
+&"idle": SubResource("Animation_qkfsl")
 }
 
 [node name="legs_test" type="CharacterBody2D"]
@@ -42,6 +42,6 @@ shape = SubResource("RectangleShape2D_lvy2k")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_wvhxk")
+&"": SubResource("AnimationLibrary_wvhxk")
 }
 autoplay = "idle"
