@@ -1,19 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://57qpw253oheg"]
+[gd_scene load_steps=2 format=3 uid="uid://57qpw253oheg"]
 
-[ext_resource type="PackedScene" uid="uid://c8vyybnfvcs4g" path="res://src/player/player.tscn" id="1_b7yiy"]
-[ext_resource type="PackedScene" uid="uid://dri8vq05qchlb" path="res://src/maps/test_map.tscn" id="2_1ijp4"]
-[ext_resource type="Script" path="res://src/scenes/game_controller.gd" id="3_yp04u"]
+[ext_resource type="Script" uid="uid://bx48sgv06slj5" path="res://src/scenes/game_controller.gd" id="3_yp04u"]
 
 [node name="main" type="Node"]
 
-[node name="map" type="Node2D" parent="."]
+[node name="game" type="Node2D" parent="."]
+unique_name_in_owner = true
 
-[node name="test_map" parent="map" instance=ExtResource("2_1ijp4")]
-
-[node name="player" parent="map" instance=ExtResource("1_b7yiy")]
-position = Vector2(-2, -65)
-
-[node name="game_controller" type="Node" parent="map"]
+[node name="game_controller" type="Node" parent="game"]
 script = ExtResource("3_yp04u")
 
 [node name="camera" type="Camera2D" parent="."]
