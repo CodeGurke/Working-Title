@@ -21,14 +21,18 @@ func _ready() -> void:
 # movement code
 func _physics_process(delta):
 	var movement : float = Input.get_axis('move_left', 'move_right')
-	var jump : bool = Input.is_action_pressed("move_up")
+	var jump : bool = Input.is_action_pressed("jump")
+	var currentdir: int
+	
+	if(movement != 0):
+		scale.x = scale.y * movement
 	
 	velocity.x = movement * speed
 	if jump == true and self.is_on_floor(): velocity.y = jump_force
 	velocity.y += gravity
 	
 	move_and_slide()
-
+	
 
 func select_parts(legs : PackedScene, body : PackedScene, head : PackedScene, hand_l : PackedScene, hand_r : PackedScene) -> void:
 	selected_parts = [legs, body, head, hand_l, hand_r]
@@ -38,6 +42,6 @@ func get_selected_parts() -> Array[PackedScene]:
 	return selected_parts
 
 
-# this function is for testing purposeses because a character builder is not built yet
+# this function is for testing purposes because a character builder is not built yet
 func test_auto() -> void:
 	select_parts(preload("res://src/player/parts/legs/legs_standart.tscn"), preload("res://src/player/parts/body/body.tscn"), preload("res://src/player/parts/head/head.tscn"), preload("res://src/player/parts/hands/hand.tscn"), preload("res://src/player/parts/hands/hand.tscn"))

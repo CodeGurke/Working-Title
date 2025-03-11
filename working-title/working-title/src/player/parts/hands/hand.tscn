@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://dgd7b1hpeqy2i"]
+
+[ext_resource type="Texture2D" uid="uid://jjn25xubhaq2" path="res://src/player/parts/hands/hand_test_back.png" id="1_blged"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gecst"]
+size = Vector2(23.5, 22)
+
+[node name="hand" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(12, 0)
+texture = ExtResource("1_blged")
+
+[node name="connector" type="Marker2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(11.75, 0)
+shape = SubResource("RectangleShape2D_gecst")

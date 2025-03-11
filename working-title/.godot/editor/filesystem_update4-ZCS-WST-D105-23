@@ -1,0 +1,5 @@
+res://src/player/player.tscn
+res://src/collision-shapes/hitbox.gd
+res://src/scenes/damage_component.gd
+res://src/collision-shapes/hurtbox.gd
+res://src/scenes/main.tscn

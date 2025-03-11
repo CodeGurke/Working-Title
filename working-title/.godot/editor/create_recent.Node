@@ -1,0 +1,6 @@
+AnimationTree
+AnimationPlayer
+ColorRect
+CollisionShape2D
+Area2D
+Node2D
