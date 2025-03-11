@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bp5octkfkepoc"]
 
-[ext_resource type="Texture2D" uid="uid://5mstqy1tlfk5" path="res://src/player/parts/body/Body_Test.png" id="1_logq1"]
+[ext_resource type="Texture2D" uid="uid://dslnwos7xtnty" path="res://src/player/parts/body/Body_Test.png" id="1_logq1"]
 [ext_resource type="Script" uid="uid://njha8phdbb1w" path="res://src/player/parts/body/body.gd" id="1_r3gvl"]
 [ext_resource type="Script" uid="uid://kwgsn8gks77j" path="res://src/player/parts/hurtbox.gd" id="3_o5v2p"]
 

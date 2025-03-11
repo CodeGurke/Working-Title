@@ -1,6 +1,7 @@
 class_name Character
 extends Node2D
 
+# this script is used to build the players body
  
 # holds the instances of the individual body parts to access later using code
 var legs : CharacterBody2D
@@ -9,11 +10,9 @@ var head : CharacterBody2D
 var hand_l : CharacterBody2D
 var hand_r : CharacterBody2D
 
-
 # is processed every frame
 func _process(delta):
 	update_position()
-
 
 # this function is called by the player script to build the players character
 func build_body() -> void:

@@ -1,10 +1,11 @@
 extends Node
 
-
+# loads everything needed to play the game
 const player_1 : = preload("res://src/player/player.tscn")
 const player_2 : = preload("res://src/player/player.tscn")
 var map : = preload("res://src/maps/test_map.tscn")
 
+# sets up variables for instances of needed nodes
 var instanced_player_1 : CharacterBody2D
 var instanced_player_2 : CharacterBody2D
 var instanced_map : Node2D
@@ -13,11 +14,13 @@ var instanced_map : Node2D
 func _ready():
 	spawn_map()
 
+# spawns map and players
 func spawn_map() -> void:
 	instanced_map = map.instantiate()
 	%game.add_child.call_deferred(instanced_map)
 	spawn_players(instanced_map.get_spawn_locations())
 
+# spawns players by instancing them, setting input device and adding them to the scene
 func spawn_players(spawn_locations : Dictionary) -> void:
 	instanced_player_1 = player_1.instantiate()
 	instanced_player_2 = player_2.instantiate()
