@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://c8vyybnfvcs4g"]
 
-[ext_resource type="Script" uid="uid://bf2owuclolwxu" path="res://src/player/player.gd" id="1_njt6n"]
-[ext_resource type="Script" uid="uid://bi02hhpv0g8tf" path="res://src/player/character.gd" id="2_f4s8n"]
-[ext_resource type="Script" uid="uid://3riil0y0wjd2" path="res://src/state-machine/state-machine.gd" id="3_wncy2"]
+[ext_resource type="Script" uid="uid://cilrynh232d1w" path="res://src/player/player.gd" id="1_njt6n"]
+[ext_resource type="Script" uid="uid://b16lwee2l52r4" path="res://src/player/character.gd" id="2_f4s8n"]
+[ext_resource type="Script" uid="uid://c3xjikv4yfs6g" path="res://src/state-machine/state-machine.gd" id="3_wncy2"]
 [ext_resource type="Script" uid="uid://cxkkwr5xk86rb" path="res://src/player/hitboxes/damage_component.gd" id="4_2n4ta"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2ie5r"]
