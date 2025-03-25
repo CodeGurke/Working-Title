@@ -4,4 +4,3 @@ res://src/player/parts/legs/legs_standart.tscn
 res://src/player/parts/body/body.tscn
 res://src/player/parts/head/head.tscn
 res://src/player/parts/hands/hand.tscn
-res://src/player/character.gd

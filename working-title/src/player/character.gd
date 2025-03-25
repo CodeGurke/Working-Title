@@ -1,7 +1,6 @@
 class_name Character
 extends Node2D
 
-# this script is used to build the players body
  
 # holds the instances of the individual body parts to access later using code
 var legs : CharacterBody2D
@@ -9,14 +8,12 @@ var body : CharacterBody2D
 var head : CharacterBody2D
 var hand_l : CharacterBody2D
 var hand_r : CharacterBody2D
-
 signal hit(damage:int)
 @export var team = 0
 
 # is processed every frame
 func _process(delta):
 	update_position()
-
 	var leganim: AnimationPlayer = legs.get_node("AnimationPlayer")
 	if(Input.get_axis("move_left","move_right") != 0):
 		leganim.play('run')
@@ -58,7 +55,7 @@ func build_body() -> void:
 	%character.add_child(hand_r)
 	
 	# connects the hurtboxes of the individual body parts to a function
-	#$legs/Area2D.area_entered.connect(hitbox_entered_hurtbox.bind($legs/Area2D))
+	$legs/Area2D.area_entered.connect(hitbox_entered_hurtbox.bind($legs/Area2D))
 	$body/Area2D.area_entered.connect(hitbox_entered_hurtbox.bind($body/Area2D))
 	$head/Area2D.area_entered.connect(hitbox_entered_hurtbox.bind($head/Area2D))
 	

@@ -1,8 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://qr02efw701mf"]
 
-[ext_resource type="Script" uid="uid://cau4c2mkpc4vc" path="res://src/player/parts/legs/legs.gd" id="1_q3q18"]
-[ext_resource type="Texture2D" uid="uid://dhr1r5ookxdm4" path="res://src/player/parts/legs/Legs_Test.png" id="2_2aex2"]
-[ext_resource type="Script" uid="uid://kwgsn8gks77j" path="res://src/player/parts/hurtbox.gd" id="3_3l3p7"]
+[ext_resource type="Script" uid="uid://baul38nl3nguh" path="res://src/player/parts/legs/legs.gd" id="1_q3q18"]
+[ext_resource type="Texture2D" uid="uid://biokj278x2sp0" path="res://src/player/parts/legs/Legs_Test.png" id="2_2aex2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lvy2k"]
 size = Vector2(16, 32)
