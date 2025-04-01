@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bp5octkfkepoc"]
+[gd_scene load_steps=4 format=3 uid="uid://bp5octkfkepoc"]
 
 [ext_resource type="Texture2D" uid="uid://bfkobgc4e8nm1" path="res://src/player/parts/body/Body_Test.png" id="1_logq1"]
 [ext_resource type="Script" uid="uid://njha8phdbb1w" path="res://src/player/parts/body/body.gd" id="1_r3gvl"]
@@ -19,7 +19,6 @@ unique_name_in_owner = true
 position = Vector2(0, -32)
 
 [node name="Area2D" type="Area2D" parent="."]
-script = ExtResource("3_o5v2p")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 light_mask = 0

@@ -21,6 +21,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(0, -16)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("sprite:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [6.28319]
+}
 
 [sub_resource type="Animation" id="Animation_qkfsl"]
 resource_name = "idle"
@@ -49,11 +61,41 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(0, -32), Vector2(0, -29), Vector2(0, -32)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("sprite:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_fy6vp"]
+resource_name = "run"
+loop_mode = 1
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 12.5664, 25.1327]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wvhxk"]
 _data = {
 &"RESET": SubResource("Animation_5ykwg"),
-&"idle": SubResource("Animation_qkfsl")
+&"idle": SubResource("Animation_qkfsl"),
+&"run": SubResource("Animation_fy6vp")
 }
 
 [node name="legs" type="CharacterBody2D"]
@@ -62,6 +104,7 @@ script = ExtResource("1_q3q18")
 
 [node name="sprite" type="Sprite2D" parent="."]
 position = Vector2(0, -16)
+rotation = 6.28319
 texture = ExtResource("2_2aex2")
 
 [node name="connector" type="Marker2D" parent="."]
@@ -69,7 +112,6 @@ unique_name_in_owner = true
 position = Vector2(0, -32)
 
 [node name="Area2D" type="Area2D" parent="."]
-script = ExtResource("3_3l3p7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 light_mask = 0
