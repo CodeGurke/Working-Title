@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://dgd7b1hpeqy2i"]
 
-[ext_resource type="Texture2D" uid="uid://jjn25xubhaq2" path="res://src/player/parts/hands/hand_test_back.png" id="1_blged"]
+[ext_resource type="Texture2D" uid="uid://bpkso7kwrm4xk" path="res://src/player/parts/hands/hand_test_back.png" id="1_blged"]
 [ext_resource type="Script" uid="uid://b2bn414r5dxgv" path="res://src/player/hitboxes/hitbox.gd" id="2_fygw5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gecst"]
