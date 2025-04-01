@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=3 uid="uid://dnsaveoo4fsbi"]
+
+[ext_resource type="Script" uid="uid://cau4c2mkpc4vc" path="res://src/player/parts/legs/legs.gd" id="1_wcdom"]
+[ext_resource type="Texture2D" uid="uid://biokj278x2sp0" path="res://src/player/parts/legs/Legs_Test.png" id="2_4wjsg"]
+[ext_resource type="Script" uid="uid://kwgsn8gks77j" path="res://src/player/parts/hurtbox.gd" id="3_kvink"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lvy2k"]
+size = Vector2(16, 32)
+
+[sub_resource type="Animation" id="Animation_5ykwg"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_qkfsl"]
+resource_name = "idle"
+loop_mode = 1
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wvhxk"]
+_data = {
+&"RESET": SubResource("Animation_5ykwg"),
+&"idle": SubResource("Animation_qkfsl")
+}
+
+[node name="legs_test" type="CharacterBody2D"]
+slide_on_ceiling = false
+script = ExtResource("1_wcdom")
+
+[node name="sprite" type="Sprite2D" parent="."]
+position = Vector2(0, -16)
+texture = ExtResource("2_4wjsg")
+
+[node name="connector" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, -32)
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("3_kvink")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+light_mask = 0
+position = Vector2(0, -16)
+shape = SubResource("RectangleShape2D_lvy2k")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_wvhxk")
+}
+autoplay = "idle"
