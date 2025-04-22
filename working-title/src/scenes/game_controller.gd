@@ -1,6 +1,5 @@
 extends Node
 
-
 const player_1 : = preload("res://src/player/player.tscn")
 const player_2 : = preload("res://src/player/player.tscn")
 var map : = preload("res://src/maps/test_map.tscn")
@@ -9,8 +8,8 @@ var instanced_player_1 : CharacterBody2D
 var instanced_player_2 : CharacterBody2D
 var instanced_map : Node2D
 
-
 func _ready():
+	SignalManager.player_left_play_area.connect(_on_player_left_play_area)
 	spawn_map()
 
 func spawn_map() -> void:
@@ -30,3 +29,6 @@ func spawn_players(spawn_locations : Dictionary) -> void:
 	
 	instanced_player_1.global_position = spawn_locations["player_1"]
 	instanced_player_2.global_position = spawn_locations["player_2"]
+
+func _on_player_left_play_area(player : CharacterBody2D) -> void:
+	player.global_position = Vector2(0,0)
