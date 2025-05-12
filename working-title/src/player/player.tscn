@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://c8vyybnfvcs4g"]
+[gd_scene load_steps=6 format=3 uid="uid://c8vyybnfvcs4g"]
 
 [ext_resource type="Script" uid="uid://cilrynh232d1w" path="res://src/player/player.gd" id="1_njt6n"]
 [ext_resource type="Script" uid="uid://b16lwee2l52r4" path="res://src/player/character.gd" id="2_f4s8n"]
-[ext_resource type="Script" uid="uid://c3xjikv4yfs6g" path="res://src/state-machine/state-machine.gd" id="3_wncy2"]
+[ext_resource type="Script" uid="uid://3riil0y0wjd2" path="res://src/state-machine/state-machine.gd" id="3_wncy2"]
+[ext_resource type="Script" uid="uid://cgm3dfaivhn3n" path="res://src/player/damage_component.gd" id="4_244u8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2ie5r"]
 size = Vector2(18, 80)
@@ -28,3 +29,6 @@ script = ExtResource("3_wncy2")
 [node name="jump" type="Node" parent="player-controller"]
 
 [node name="fall" type="Node" parent="player-controller"]
+
+[node name="damage-component" type="Node2D" parent="."]
+script = ExtResource("4_244u8")
