@@ -4,11 +4,6 @@ static var knockback = 0
 var iframes = 0
 var hitstun = 0
 
-
-
-func _ready():
-	connect("hit",take_damage)
-
 func _process(delta):
 	if(iframes > 0):
 		iframes-=delta*100

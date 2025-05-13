@@ -32,3 +32,5 @@ script = ExtResource("3_wncy2")
 
 [node name="damage-component" type="Node2D" parent="."]
 script = ExtResource("4_244u8")
+
+[connection signal="hit" from="character" to="damage-component" method="take_damage"]

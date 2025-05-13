@@ -8,7 +8,9 @@ var body : CharacterBody2D
 var head : CharacterBody2D
 var hand_l : CharacterBody2D
 var hand_r : CharacterBody2D
-
+signal hit(damage:int)
+# TODO set this via the gamemanager later
+var team : int = 0
 
 # is processed every frame
 func _process(delta):
@@ -53,5 +55,6 @@ func update_position() -> void:
 
 
 # function to check the hitbox that entered a hurtbox / ! unclear if hurtbox is assigned
-func hitbox_entered_hurtbox(hitbox : Area2D, hurtbox : Area2D) -> void:
-	pass
+func hitbox_entered_hurtbox(hitbox : Area2D) -> void:
+	if(hitbox != null && hitbox.team != team):
+		hit.emit(hitbox.damage)
