@@ -8,13 +8,21 @@ var body : CharacterBody2D
 var head : CharacterBody2D
 var hand_l : CharacterBody2D
 var hand_r : CharacterBody2D
+
 signal hit(damage:int)
-# TODO set this via the gamemanager later
+var player : CharacterBody2D
+var input_device : int
+var handanim: AnimationPlayer
+
+# holds the player characters stats
+var speed : int = 500
+var jump_force : int = -2000
+var gravity : int = ProjectSettings.get_setting("physics/2d/default_gravity")
+
+# TODO set this via the gamemanager
+# hitboxes dont interact with hurtboxes of the same team affiliation
 var team : int = 0
 
-# is processed every frame
-func _process(delta):
-	update_position()
 
 
 # this function is called by the player script to build the players character
@@ -43,6 +51,44 @@ func build_body() -> void:
 	
 	update_position()
 
+func _ready() -> void:
+	player = self.get_parent()
+
+func set_input_device(device : int) -> void:
+	input_device = device
+	team = device
+
+func _unhandled_input(event) -> void:
+	# movement code
+	if event.is_action("move_left_"+str(input_device)) or event.is_action("move_right_"+str(input_device)):
+		player.velocity.x = Input.get_axis('move_left_'+str(input_device), 'move_right_'+str(input_device)) * speed
+	if event.is_action("move_up_"+str(input_device)) and player.is_on_floor():
+		player.velocity.y = jump_force
+	
+
+# movement code
+func _physics_process(delta) -> void:
+	player.velocity.y += gravity
+	player.move_and_slide()
+
+# is processed every frame
+func _process(delta):
+	update_position()
+	
+	#base attack code
+	handanim = hand_l.get_node("AnimationPlayer")
+	if Input.is_action_pressed("base_attack_"+str(input_device)) && handanim.current_animation == "idle":
+		if Input.is_action_pressed("move_left_"+str(input_device)) or Input.is_action_pressed("move_right_"+str(input_device)):
+			handanim.play("f_tilt")
+		elif Input.is_action_pressed("move_down_"+str(input_device)):
+			handanim.play("d_tilt")
+		elif Input.is_action_pressed("move_up_"+str(input_device)):
+			handanim.play("u_tilt")
+		else:
+			handanim.play("punch")
+		
+	if !handanim.is_playing():
+		handanim.play('idle')
 
 # this is used to change the rest of the body to movement of the piece the layer down
 func update_position() -> void:

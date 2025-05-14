@@ -21,8 +21,11 @@ func spawn_players(spawn_locations : Dictionary) -> void:
 	instanced_player_1 = player_1.instantiate()
 	instanced_player_2 = player_2.instantiate()
 	
-	instanced_player_1.set_input_device(0)
-	instanced_player_2.set_input_device(1)
+	var player_1_input = instanced_player_1.get_node("character")
+	var player_2_input = instanced_player_2.get_node("character")
+	
+	player_1_input.set_input_device(0)
+	player_2_input.set_input_device(1)
 	
 	%game.add_child.call_deferred(instanced_player_1)
 	%game.add_child.call_deferred(instanced_player_2)
