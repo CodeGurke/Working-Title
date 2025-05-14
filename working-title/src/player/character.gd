@@ -23,8 +23,6 @@ var gravity : int = ProjectSettings.get_setting("physics/2d/default_gravity")
 # hitboxes dont interact with hurtboxes of the same team affiliation
 var team : int = 0
 
-
-
 # this function is called by the player script to build the players character
 func build_body() -> void:
 	# selected parts are stored in player and accessed here
@@ -101,6 +99,6 @@ func update_position() -> void:
 
 
 # function to check the hitbox that entered a hurtbox / ! unclear if hurtbox is assigned
-func hitbox_entered_hurtbox(hitbox : Area2D) -> void:
+func hitbox_entered_hurtbox(hitbox : HitBox, hurtbox : Area2D) -> void:
 	if(hitbox != null && hitbox.team != team):
 		hit.emit(hitbox.damage)
