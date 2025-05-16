@@ -17,10 +17,61 @@ var handanim: AnimationPlayer
 # holds the player characters stats
 var speed : int = 500
 var jump_force : int = -1000
+var acceleration : float = 15.0
+var direction : float
 
 # TODO set this via the gamemanager
 # hitboxes dont interact with hurtboxes of the same team affiliation
 var team : int = 0
+
+
+func _ready() -> void:
+	player = self.get_parent()
+
+
+# is processed every frame
+func _process(delta):
+	update_position()
+	
+	#base attack code
+	handanim = hand_l.get_node("AnimationPlayer")
+	if Input.is_action_pressed("base_attack_"+str(input_device)) && handanim.current_animation == "idle":
+		if Input.is_action_pressed("move_left_"+str(input_device)) or Input.is_action_pressed("move_right_"+str(input_device)):
+			handanim.play("f_tilt")
+		elif Input.is_action_pressed("move_down_"+str(input_device)):
+			handanim.play("d_tilt")
+		elif Input.is_action_pressed("move_up_"+str(input_device)):
+			handanim.play("u_tilt")
+		else:
+			handanim.play("punch")
+		
+	if !handanim.is_playing():
+		handanim.play('idle')
+
+
+# movement code
+func _physics_process(delta) -> void:
+	var input_dir := Input.get_vector("move_left_"+str(input_device), "move_right_"+str(input_device), "move_up_"+str(input_device), "move_down_"+str(input_device))
+	
+	if input_dir.y < 0 and player.is_on_floor():
+		player.velocity.y = jump_force
+	
+	if player.is_on_floor():
+		direction = lerp(direction, input_dir.x, delta * acceleration)
+	else:
+		player.velocity.y += ProjectSettings.get_setting("physics/2d/default_gravity") * delta
+		
+		direction = lerp(direction, 0.0, delta * acceleration/5)
+		
+		if input_dir != Vector2.ZERO:
+			direction = lerp(direction, input_dir.x, delta * (acceleration/3))
+	
+	if direction:
+		player.velocity.x = direction * speed
+	else:
+		player.velocity.x = move_toward(player.velocity.x, 0, speed)
+	
+	player.move_and_slide()
 
 
 # this function is called by the player script to build the players character
@@ -49,45 +100,11 @@ func build_body() -> void:
 	
 	update_position()
 
-func _ready() -> void:
-	player = self.get_parent()
 
 func set_input_device(device : int) -> void:
 	input_device = device
 	team = device
 
-func _unhandled_input(event) -> void:
-	# movement code
-	if event.is_action("move_left_"+str(input_device)) or event.is_action("move_right_"+str(input_device)):
-		player.velocity.x = Input.get_axis('move_left_'+str(input_device), 'move_right_'+str(input_device)) * speed
-	if event.is_action("move_up_"+str(input_device)) and player.is_on_floor():
-		player.velocity.y = jump_force
-	
-
-# movement code
-func _physics_process(delta) -> void:
-	if not player.is_on_floor():
-		player.velocity.y += ProjectSettings.get_setting("physics/2d/default_gravity") * delta
-	player.move_and_slide()
-
-# is processed every frame
-func _process(delta):
-	update_position()
-	
-	#base attack code
-	handanim = hand_l.get_node("AnimationPlayer")
-	if Input.is_action_pressed("base_attack_"+str(input_device)) && handanim.current_animation == "idle":
-		if Input.is_action_pressed("move_left_"+str(input_device)) or Input.is_action_pressed("move_right_"+str(input_device)):
-			handanim.play("f_tilt")
-		elif Input.is_action_pressed("move_down_"+str(input_device)):
-			handanim.play("d_tilt")
-		elif Input.is_action_pressed("move_up_"+str(input_device)):
-			handanim.play("u_tilt")
-		else:
-			handanim.play("punch")
-		
-	if !handanim.is_playing():
-		handanim.play('idle')
 
 # this is used to change the rest of the body to movement of the piece the layer down
 func update_position() -> void:
