@@ -1,4 +1,3 @@
-class_name Legs
 extends CharacterBody2D
 
 

@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://c0eppgic260l3" path="res://assets/hands/hand_test_back.png" id="1_815np"]
 [ext_resource type="Script" uid="uid://d1okx21x0uite" path="res://scripts/player/hitbox.gd" id="2_7x7k1"]
-[ext_resource type="AnimationLibrary" uid="uid://bucak7cij2y17" path="res://ressources/animations/attackanims.res" id="3_x48sk"]
+[ext_resource type="AnimationLibrary" uid="uid://bucak7cij2y17" path="res://resources/animations/attackanims.res" id="3_x48sk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gecst"]
 size = Vector2(23.5, 22)
