@@ -51,25 +51,31 @@ func _process(delta):
 
 # movement code
 func _physics_process(delta) -> void:
+	
 	var input_dir := Input.get_vector("move_left_"+str(input_device), "move_right_"+str(input_device), "move_up_"+str(input_device), "move_down_"+str(input_device))
 	
+	# handles jumping
 	if input_dir.y < 0 and player.is_on_floor():
 		player.velocity.y = jump_force
 	
+	# handles acceleration and deceleration
 	if player.is_on_floor():
 		direction = lerp(direction, input_dir.x, delta * acceleration)
 	else:
+		# handles gravity & deceleration in the air
 		player.velocity.y += ProjectSettings.get_setting("physics/2d/default_gravity") * delta
-		
 		direction = lerp(direction, 0.0, delta * acceleration/5)
 		
 		if input_dir != Vector2.ZERO:
+			# handles acceleration in the air
 			direction = lerp(direction, input_dir.x, delta * (acceleration/3))
 	
 	if direction:
+		# applies velocity in the inputed direction
 		player.velocity.x = direction * speed
 	else:
-		player.velocity.x = move_toward(player.velocity.x, 0, speed)
+		# decelerates the player when not inputing any direction
+		player.velocity.x = move_toward(player.velocity.x, 0, speed * delta)
 	
 	player.move_and_slide()
 
