@@ -32,22 +32,6 @@ func _ready() -> void:
 # is processed every frame
 func _process(delta):
 	update_position()
-	
-	#base attack code
-	handanim = hand_l.get_node("AnimationPlayer")
-	if Input.is_action_pressed("base_attack_"+str(input_device)) && handanim.current_animation == "idle":
-		if Input.is_action_pressed("move_left_"+str(input_device)) or Input.is_action_pressed("move_right_"+str(input_device)):
-			handanim.play("f_tilt")
-		elif Input.is_action_pressed("move_down_"+str(input_device)):
-			handanim.play("d_tilt")
-		elif Input.is_action_pressed("move_up_"+str(input_device)):
-			handanim.play("u_tilt")
-		else:
-			handanim.play("punch")
-		
-	if !handanim.is_playing():
-		handanim.play('idle')
-
 
 # movement code
 func _physics_process(delta) -> void:
@@ -78,6 +62,21 @@ func _physics_process(delta) -> void:
 		player.velocity.x = move_toward(player.velocity.x, 0, speed * delta)
 	
 	player.move_and_slide()
+	
+	#base attack code
+	handanim = hand_l.get_node("AnimationPlayer")
+	if Input.is_action_pressed("base_attack_"+str(input_device)) && handanim.current_animation == "idle":
+		if input_dir == Vector2.DOWN:
+			handanim.play("d_tilt")
+		elif input_dir == Vector2.UP:
+			handanim.play("u_tilt")
+		elif input_dir == Vector2.LEFT or input_dir == Vector2.RIGHT:
+			handanim.play("f_tilt")
+		else:
+			handanim.play("punch")
+		
+	if !handanim.is_playing():
+		handanim.play('idle')
 
 
 # this function is called by the player script to build the players character
