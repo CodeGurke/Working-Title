@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://coqjqnb56o3xe"]
 
-[ext_resource type="Texture2D" uid="uid://djsdx4n30msm2" path="res://src/player/parts/head/head_test.png" id="1_lrcgh"]
+[ext_resource type="Texture2D" uid="uid://djsdx4n30msm2" path="res://assets/heads/head_test.png" id="1_qxu74"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hubx7"]
 size = Vector2(22, 30)
@@ -9,7 +9,7 @@ size = Vector2(22, 30)
 
 [node name="sprite" type="Sprite2D" parent="."]
 position = Vector2(0, -16)
-texture = ExtResource("1_lrcgh")
+texture = ExtResource("1_qxu74")
 
 [node name="Area2D" type="Area2D" parent="."]
 

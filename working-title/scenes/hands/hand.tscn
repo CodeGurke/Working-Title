@@ -1,8 +1,8 @@
 [gd_scene load_steps=12 format=3 uid="uid://dgd7b1hpeqy2i"]
 
-[ext_resource type="Texture2D" uid="uid://bpkso7kwrm4xk" path="res://src/player/parts/hands/hand_test_back.png" id="1_blged"]
-[ext_resource type="AnimationLibrary" uid="uid://bucak7cij2y17" path="res://src/Anims/attackanims.res" id="2_hg5nx"]
-[ext_resource type="Script" uid="uid://d1okx21x0uite" path="res://src/player/parts/hands/hitbox.gd" id="2_lwb2k"]
+[ext_resource type="Texture2D" uid="uid://bpkso7kwrm4xk" path="res://assets/hands/hand_test_back.png" id="1_815np"]
+[ext_resource type="Script" uid="uid://d1okx21x0uite" path="res://scripts/player/hitbox.gd" id="2_7x7k1"]
+[ext_resource type="AnimationLibrary" uid="uid://bucak7cij2y17" path="res://ressources/animations/attackanims.res" id="3_x48sk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gecst"]
 size = Vector2(23.5, 22)
@@ -241,12 +241,12 @@ position = Vector2(10, -30)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(12, 0)
-texture = ExtResource("1_blged")
+texture = ExtResource("1_815np")
 
 [node name="connector" type="Marker2D" parent="."]
 
 [node name="Area2D" type="Area2D" parent="."]
-script = ExtResource("2_lwb2k")
+script = ExtResource("2_7x7k1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(11.75, 0)
@@ -255,6 +255,6 @@ shape = SubResource("RectangleShape2D_gecst")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_lwb2k"),
-&"attackanims": ExtResource("2_hg5nx")
+&"attackanims": ExtResource("3_x48sk")
 }
 autoplay = "idle"

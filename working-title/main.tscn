@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://57qpw253oheg"]
 
-[ext_resource type="Script" uid="uid://bx48sgv06slj5" path="res://src/scenes/game_controller.gd" id="3_yp04u"]
+[ext_resource type="Script" uid="uid://bx48sgv06slj5" path="res://scripts/game_controller.gd" id="1_ig7tw"]
 
 [node name="main" type="Node"]
 
@@ -8,7 +8,7 @@
 unique_name_in_owner = true
 
 [node name="game_controller" type="Node" parent="game"]
-script = ExtResource("3_yp04u")
+script = ExtResource("1_ig7tw")
 
 [node name="camera" type="Camera2D" parent="."]
 position = Vector2(-2, -146)

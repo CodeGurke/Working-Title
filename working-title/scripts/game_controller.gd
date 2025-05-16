@@ -1,8 +1,8 @@
 extends Node
 
-const player_1 : = preload("res://src/player/player.tscn")
-const player_2 : = preload("res://src/player/player.tscn")
-var map : = preload("res://src/maps/test_map.tscn")
+const player_1 : = preload("res://scenes/player.tscn")
+const player_2 : = preload("res://scenes/player.tscn")
+var map : = preload("res://scenes/test_map.tscn")
 
 var instanced_player_1 : CharacterBody2D
 var instanced_player_2 : CharacterBody2D

@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://dnsaveoo4fsbi"]
 
-[ext_resource type="Script" uid="uid://cau4c2mkpc4vc" path="res://src/player/parts/legs/legs.gd" id="1_wcdom"]
-[ext_resource type="Texture2D" uid="uid://b11248n26w0yf" path="res://src/player/parts/legs/Legs_Test.png" id="2_4wjsg"]
-[ext_resource type="Script" uid="uid://kwgsn8gks77j" path="res://src/player/parts/hurtbox.gd" id="3_kvink"]
+[ext_resource type="Script" uid="uid://cau4c2mkpc4vc" path="res://scripts/player/legs.gd" id="1_7ep88"]
+[ext_resource type="Texture2D" uid="uid://b11248n26w0yf" path="res://assets/legs/Legs_Test.png" id="2_212li"]
+[ext_resource type="Script" uid="uid://kwgsn8gks77j" path="res://scripts/player/hurtbox.gd" id="3_b27xb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lvy2k"]
 size = Vector2(16, 32)
@@ -22,18 +22,18 @@ _data = {
 
 [node name="legs_test" type="CharacterBody2D"]
 slide_on_ceiling = false
-script = ExtResource("1_wcdom")
+script = ExtResource("1_7ep88")
 
 [node name="sprite" type="Sprite2D" parent="."]
 position = Vector2(0, -16)
-texture = ExtResource("2_4wjsg")
+texture = ExtResource("2_212li")
 
 [node name="connector" type="Marker2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(0, -32)
 
 [node name="Area2D" type="Area2D" parent="."]
-script = ExtResource("3_kvink")
+script = ExtResource("3_b27xb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 light_mask = 0

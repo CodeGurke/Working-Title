@@ -11,19 +11,29 @@ config_version=5
 [application]
 
 config/name="Working Title"
-run/main_scene="res://src/scenes/main.tscn"
+run/main_scene="res://main.tscn"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
-SignalManager="*res://src/globals/signal_manager.gd"
+SignalManager="*res://scripts/globals/signal_manager.gd"
 
 [display]
 
 window/size/viewport_width=640
 window/size/viewport_height=360
 window/stretch/mode="canvas_items"
+
+[file_customization]
+
+folder_colors={
+"res://assets/": "orange",
+"res://ressources/": "yellow",
+"res://scenes/": "blue",
+"res://scripts/": "green",
+"res://unsorted/": "red"
+}
 
 [input]
 
