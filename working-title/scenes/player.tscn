@@ -48,6 +48,7 @@ script/source = "extends Node
 "
 
 [node name="player" type="CharacterBody2D"]
+platform_on_leave = 2
 script = ExtResource("1_dqkch")
 
 [node name="character" type="Node2D" parent="."]

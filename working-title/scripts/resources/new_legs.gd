@@ -1,6 +1,5 @@
 class_name Legs
-extends Resource
-
+extends Stats
 
 @export var name : String
 @export var sprite : Texture

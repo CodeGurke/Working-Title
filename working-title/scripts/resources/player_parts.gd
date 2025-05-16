@@ -1,5 +1,5 @@
 class_name PlayerParts
-extends Resource
+extends Stats
 
 @export var legs : Legs
 var name : String
