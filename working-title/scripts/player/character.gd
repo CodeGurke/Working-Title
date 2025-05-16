@@ -99,6 +99,6 @@ func update_position() -> void:
 
 
 # function to check the hitbox that entered a hurtbox / ! unclear if hurtbox is assigned
-func hitbox_entered_hurtbox(hitbox : HitBox, hurtbox : Area2D) -> void:
-	if(hitbox != null && hitbox.team != team):
+func hitbox_entered_hurtbox(hitbox : Area2D, hurtbox : Area2D) -> void:
+	if(hitbox is HitBox && hitbox.team != team):
 		hit.emit(hitbox.damage)
