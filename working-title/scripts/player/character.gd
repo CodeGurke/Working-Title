@@ -16,12 +16,12 @@ var handanim: AnimationPlayer
 
 # holds the player characters stats
 var speed : int = 500
-var jump_force : int = -2000
-var gravity : int = ProjectSettings.get_setting("physics/2d/default_gravity")
+var jump_force : int = -1000
 
 # TODO set this via the gamemanager
 # hitboxes dont interact with hurtboxes of the same team affiliation
 var team : int = 0
+
 
 # this function is called by the player script to build the players character
 func build_body() -> void:
@@ -66,7 +66,8 @@ func _unhandled_input(event) -> void:
 
 # movement code
 func _physics_process(delta) -> void:
-	player.velocity.y += gravity
+	if not player.is_on_floor():
+		player.velocity.y += ProjectSettings.get_setting("physics/2d/default_gravity") * delta
 	player.move_and_slide()
 
 # is processed every frame
