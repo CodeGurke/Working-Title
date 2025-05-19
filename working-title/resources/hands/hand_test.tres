@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Bodypart" load_steps=3 format=3 uid="uid://c4lwgwmpuhabk"]
+
+[ext_resource type="Script" uid="uid://b43bm4e5s50d7" path="res://scripts/resources/bodypart.gd" id="1_5vaam"]
+[ext_resource type="Texture2D" uid="uid://c0eppgic260l3" path="res://assets/hands/hand_test_back.png" id="2_vvb33"]
+
+[resource]
+script = ExtResource("1_5vaam")
+type = "hand"
+name = "Test Hand"
+sprite = ExtResource("2_vvb33")
+width = 24
+height = 22
+speed = 0.0
+metadata/_custom_type_script = "uid://b43bm4e5s50d7"

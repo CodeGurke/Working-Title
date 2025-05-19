@@ -1,4 +1,4 @@
-class_name PlayerParts
+class_name PlayerInfo
 extends Stats
 
 @export var legs : Bodypart

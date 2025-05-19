@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_8aalx")
-type = ""
+type = "legs"
 name = "Test Legs"
 sprite = ExtResource("2_urseo")
 width = 16

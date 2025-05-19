@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Bodypart" load_steps=3 format=3 uid="uid://cmbsrmr42vklb"]
+
+[ext_resource type="Script" uid="uid://b43bm4e5s50d7" path="res://scripts/resources/bodypart.gd" id="1_5rrsp"]
+[ext_resource type="Texture2D" uid="uid://d1m2ox6at6oeu" path="res://assets/heads/head_test.png" id="2_oy3he"]
+
+[resource]
+script = ExtResource("1_5rrsp")
+type = "head"
+name = "Test Head"
+sprite = ExtResource("2_oy3he")
+width = 20
+height = 32
+speed = 0.0
+metadata/_custom_type_script = "uid://b43bm4e5s50d7"

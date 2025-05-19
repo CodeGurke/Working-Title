@@ -24,8 +24,8 @@ func spawn_players(spawn_locations : Dictionary) -> void:
 	var player_1_input = instanced_player_1.get_node("character")
 	var player_2_input = instanced_player_2.get_node("character")
 	
-	player_1_input.set_input_device(0)
-	player_2_input.set_input_device(1)
+	instanced_player_1.input_device = 0
+	instanced_player_2.input_device = 1
 	
 	%game.add_child.call_deferred(instanced_player_1)
 	%game.add_child.call_deferred(instanced_player_2)
