@@ -30,9 +30,11 @@ func _physics_process(delta) -> void:
 	else:
 		# handles gravity & deceleration in the air
 		velocity.y += ProjectSettings.get_setting("physics/2d/default_gravity") * info.gravity_multiplier * delta
-		direction = lerp(direction, 0.0, delta * info.acceleration/5)
 		
-		if input_dir != Vector2.ZERO:
+		if input_dir == Vector2.ZERO:
+			# handles deceleration in the air
+			direction = lerp(direction, 0.0, delta * info.acceleration/5)
+		else:
 			# handles acceleration in the air
 			direction = lerp(direction, input_dir.x, delta * (info.acceleration/3))
 	
