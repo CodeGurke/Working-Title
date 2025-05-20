@@ -64,8 +64,17 @@ func _physics_process(delta) -> void:
 
 func build_body() -> void:
 	$legs.texture = info.legs.sprite
+	$legs.offset.y = -(float(info.legs.height) / 2)
 	$body.texture = info.body.sprite
+	$body.offset.y = -(info.legs.height + float(info.body.height) / 2)
 	$head.texture = info.head.sprite
+	$head.offset.y = -(info.legs.height + info.body.height + float(info.head.height) / 2)
+	var hurtbox := CollisionShape2D.new()
+	hurtbox.set_shape(CapsuleShape2D.new())
+	hurtbox.position.y = -(float(info.legs.height + info.body.height + info.head.height) / 2)
+	hurtbox.shape.set_height(float(info.legs.height + info.body.height + info.head.height))
+	hurtbox.shape.set_radius(float(info.get_max_width()) / 2)
+	add_child(hurtbox)
 
 func calculate_stats() -> void:
 	info.speed = info.speed * 100

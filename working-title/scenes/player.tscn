@@ -1,12 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://c8vyybnfvcs4g"]
+[gd_scene load_steps=5 format=3 uid="uid://c8vyybnfvcs4g"]
 
 [ext_resource type="Script" uid="uid://cilrynh232d1w" path="res://scripts/player/player.gd" id="1_dqkch"]
 [ext_resource type="Resource" uid="uid://dlwwossphsqvx" path="res://resources/player/player_info.tres" id="2_dqkch"]
 [ext_resource type="Script" uid="uid://b16lwee2l52r4" path="res://scripts/player/character.gd" id="2_qlg0r"]
 [ext_resource type="Script" uid="uid://cgm3dfaivhn3n" path="res://scripts/player/damage_component.gd" id="4_fjrip"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ie5r"]
-size = Vector2(20, 96)
 
 [node name="player" type="CharacterBody2D"]
 platform_on_leave = 2
@@ -14,21 +11,14 @@ script = ExtResource("1_dqkch")
 info = ExtResource("2_dqkch")
 
 [node name="legs" type="Sprite2D" parent="."]
-offset = Vector2(0, -16)
 
 [node name="body" type="Sprite2D" parent="."]
-offset = Vector2(0, -48)
 
 [node name="head" type="Sprite2D" parent="."]
-offset = Vector2(0, -80)
 
 [node name="character" type="Node2D" parent="."]
 unique_name_in_owner = true
 script = ExtResource("2_qlg0r")
-
-[node name="collision_box" type="CollisionShape2D" parent="."]
-position = Vector2(0, -48)
-shape = SubResource("RectangleShape2D_2ie5r")
 
 [node name="damage-component" type="Node2D" parent="."]
 script = ExtResource("4_fjrip")
