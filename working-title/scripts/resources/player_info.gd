@@ -6,3 +6,6 @@ extends Stats
 @export var head : Bodypart
 @export var hand_l : Bodypart
 @export var hand_r : Bodypart
+
+func calculate_stats() -> void:
+	pass

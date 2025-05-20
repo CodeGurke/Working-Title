@@ -1,8 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://bde6ihnjdrmvn"]
 
 [ext_resource type="Texture2D" uid="uid://didwfpu55bd0h" path="res://src/bitte-sortieren/Insel_fertig.png" id="1_wtusf"]
-[ext_resource type="PackedScene" uid="uid://doo4pvqk211df" path="res://src/maps/platform.tscn" id="2_as5ut"]
+[ext_resource type="PackedScene" uid="uid://doo4pvqk211df" path="res://scenes/maps/platform.tscn" id="2_as5ut"]
 [ext_resource type="Texture2D" uid="uid://ccu40udwcqy4a" path="res://src/bitte-sortieren/Insel_Baum.png" id="2_qngof"]
+
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6chkc"]
 size = Vector2(1436, 96.375)
