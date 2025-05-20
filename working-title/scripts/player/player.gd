@@ -12,6 +12,7 @@ var selected_parts : Array[PackedScene]
 # when everything is loaded builds the players character
 func _ready() -> void:
 	info = info.duplicate(true)
+	info.calculate_stats()
 	calculate_stats()
 	build_body()
 
