@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="PlayerInfo" load_steps=6 format=3 uid="uid://dlwwossphsqvx"]
 
 [ext_resource type="Resource" uid="uid://bt5i3n2eiecxg" path="res://resources/bodies/body_test.tres" id="1_gcn2m"]
-[ext_resource type="Resource" uid="uid://c4lwgwmpuhabk" path="res://resources/hands/hand_test.tres" id="2_f48rl"]
+[ext_resource type="Resource" uid="uid://dgfjxjqhno067" path="res://resources/hands/hand_test.tres" id="2_f48rl"]
 [ext_resource type="Resource" uid="uid://cjaeagftu5yyv" path="res://resources/legs/legs_test.tres" id="2_jog7t"]
 [ext_resource type="Script" uid="uid://boief182alyhl" path="res://scripts/resources/player_info.gd" id="3_f48rl"]
 [ext_resource type="Resource" uid="uid://cmbsrmr42vklb" path="res://resources/heads/head_test.tres" id="3_h3t8f"]
@@ -11,7 +11,7 @@ script = ExtResource("3_f48rl")
 legs = ExtResource("2_jog7t")
 body = ExtResource("1_gcn2m")
 head = ExtResource("3_h3t8f")
-hand_l = ExtResource("2_f48rl")
+hand_l = ExtResource("3_h3t8f")
 hand_r = ExtResource("2_f48rl")
 speed = 0.0
 jump_force = 0.0
