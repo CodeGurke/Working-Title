@@ -5,6 +5,9 @@ extends CharacterBody2D
 var input_device : int
 var direction : float
 
+var team: int
+signal hit(damage:int)
+
 # gets access to the part that is being used
 # TODO make the parts selectable and change here automatically
 var selected_parts : Array[PackedScene]
@@ -15,6 +18,7 @@ func _ready() -> void:
 	info.calculate_stats()
 	calculate_stats()
 	build_body()
+	team = input_device;
 
 func _physics_process(delta) -> void:
 	
@@ -75,6 +79,9 @@ func build_body() -> void:
 	$rhand.texture = info.hand_r.sprite
 	$rhand.offset.y = -(info.legs.height)
 	$rhand.offset.x = -(float(info.legs.width)/2 + info.hand_r.width)
+	$lhand/Area2D.scale.x = (info.hand_l.width)
+	$lhand/Area2D.scale.y = (info.hand_l.height)
+	
 	var hurtbox := CollisionShape2D.new()
 	hurtbox.set_shape(CapsuleShape2D.new())
 	hurtbox.position.y = -(float(info.legs.height + info.body.height + info.head.height) / 2)
@@ -94,6 +101,10 @@ func select_parts(legs : PackedScene, body : PackedScene, head : PackedScene, ha
 func get_selected_parts() -> Array[PackedScene]:
 	return selected_parts
 
+func hitbox_entered_hurtbox(hitbox : Area2D,hurtbox : CollisionShape2D) -> void:
+	hurtbox = self.hurtbox
+	if(hitbox is HitBox && hitbox.team != team):
+		hit.emit(hitbox.damage)
 
 # this function is for testing purposeses because a character builder is not built yet
 func test_auto() -> void:
