@@ -48,19 +48,19 @@ func _physics_process(delta) -> void:
 	move_and_slide()
 	
 	##base attack code
-	#handanim = hand_l.get_node("AnimationPlayer")
-	#if Input.is_action_pressed("base_attack_"+str(input_device)) && handanim.current_animation == "idle":
-		#if input_dir == Vector2.DOWN:
-			#handanim.play("d_tilt")
-		#elif input_dir == Vector2.UP:
-			#handanim.play("u_tilt")
-		#elif input_dir == Vector2.LEFT or input_dir == Vector2.RIGHT:
-			#handanim.play("f_tilt")
-		#else:
-			#handanim.play("punch")
-		#
-	#if !handanim.is_playing():
-		#handanim.play('idle')
+	var handanim = $AnimationPlayer
+	if Input.is_action_pressed("base_attack_"+str(input_device)) && handanim.current_animation == "idle":
+		if input_dir == Vector2.DOWN:
+			handanim.play("d_tilt")
+		elif input_dir == Vector2.UP:
+			handanim.play("u_tilt")
+		elif input_dir == Vector2.LEFT or input_dir == Vector2.RIGHT:
+			handanim.play("f_tilt")
+		else:
+			handanim.play("punch")
+		
+	if !handanim.is_playing():
+		handanim.play('idle')
 
 func build_body() -> void:
 	$legs.texture = info.legs.sprite
@@ -69,12 +69,19 @@ func build_body() -> void:
 	$body.offset.y = -(info.legs.height + float(info.body.height) / 2)
 	$head.texture = info.head.sprite
 	$head.offset.y = -(info.legs.height + info.body.height + float(info.head.height) / 2)
+	$lhand.texture = info.hand_l.sprite
+	$lhand.offset.y = -(info.legs.height)
+	$lhand.offset.x = +(float(info.legs.width)/2 + info.hand_l.width)
+	$rhand.texture = info.hand_r.sprite
+	$rhand.offset.y = -(info.legs.height)
+	$rhand.offset.x = -(float(info.legs.width)/2 + info.hand_r.width)
 	var hurtbox := CollisionShape2D.new()
 	hurtbox.set_shape(CapsuleShape2D.new())
 	hurtbox.position.y = -(float(info.legs.height + info.body.height + info.head.height) / 2)
 	hurtbox.shape.set_height(float(info.legs.height + info.body.height + info.head.height))
 	hurtbox.shape.set_radius(float(info.get_max_width()) / 2)
 	add_child(hurtbox)
+	
 
 func calculate_stats() -> void:
 	info.speed = info.speed * 100
