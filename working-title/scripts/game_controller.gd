@@ -1,16 +1,33 @@
 extends Node
 
+# This script is used the handle centralized logic used to control the game
+# This are things like spawning players and the map
+
+
+# The following variables hold a path to the player and map scenes
+
 const player_1 : = preload("res://scenes/player.tscn")
 const player_2 : = preload("res://scenes/player.tscn")
 var map : = preload("res://scenes/maps/test_map.tscn")
+
+
+# The folowing variables are used to hold references to the instanced versions of players and map
 
 var instanced_player_1 : CharacterBody2D
 var instanced_player_2 : CharacterBody2D
 var instanced_map : Node2D
 
+
+# This function is automatically called once the project has loaded
+# It connects to the signal that is used to check if any player has left the play area
+# It also spawns the map
+
 func _ready():
 	SignalManager.player_left_play_area.connect(_on_player_left_play_area)
 	spawn_map()
+
+
+# This function instantiates the map, adds it to the world and then spawns players
 
 func spawn_map() -> void:
 	instanced_map = map.instantiate()
