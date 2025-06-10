@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Bodypart" load_steps=3 format=3 uid="uid://cjaeagftu5yyv"]
+
+[ext_resource type="Script" uid="uid://b43bm4e5s50d7" path="res://scripts/resources/bodypart.gd" id="1_8aalx"]
+[ext_resource type="Texture2D" uid="uid://2444wf7eaajc" path="res://assets/legs/Legs_Test.png" id="2_urseo"]
+
+[resource]
+script = ExtResource("1_8aalx")
+type = "legs"
+name = "Test Legs"
+sprite = ExtResource("2_urseo")
+width = 16
+height = 32
+speed = 2.0
+jump_force = -3.0
+gravity_multiplier = 0.0
+acceleration = 5.0

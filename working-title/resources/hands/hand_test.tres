@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Hand" load_steps=3 format=3 uid="uid://dgfjxjqhno067"]
+
+[ext_resource type="Script" uid="uid://vubcwa7vfm1v" path="res://scripts/resources/hand.gd" id="1_rtjbs"]
+[ext_resource type="Texture2D" uid="uid://c0eppgic260l3" path="res://assets/hands/hand_test_back.png" id="2_vvb33"]
+
+[resource]
+script = ExtResource("1_rtjbs")
+damage = 0.0
+type = "hand"
+name = "Test Hand"
+sprite = ExtResource("2_vvb33")
+width = 24
+height = 22
+speed = 0.0
+jump_force = 0.0
+gravity_multiplier = 0.0
+acceleration = 0.0
+metadata/_custom_type_script = "uid://vubcwa7vfm1v"

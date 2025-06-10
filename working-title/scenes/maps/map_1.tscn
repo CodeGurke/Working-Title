@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://bde6ihnjdrmvn"]
+
+[ext_resource type="Texture2D" uid="uid://didwfpu55bd0h" path="res://src/bitte-sortieren/Insel_fertig.png" id="1_wtusf"]
+[ext_resource type="PackedScene" uid="uid://doo4pvqk211df" path="res://scenes/maps/platform.tscn" id="2_as5ut"]
+[ext_resource type="Texture2D" uid="uid://ccu40udwcqy4a" path="res://src/bitte-sortieren/Insel_Baum.png" id="2_qngof"]
+
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6chkc"]
+size = Vector2(1436, 96.375)
+
+[node name="map1" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(-9, -29)
+scale = Vector2(5, 5)
+texture = ExtResource("1_wtusf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-7, 92)
+shape = SubResource("RectangleShape2D_6chkc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-11, -58)
+scale = Vector2(4, 4)
+texture = ExtResource("2_qngof")
+
+[node name="platform" parent="." instance=ExtResource("2_as5ut")]
+position = Vector2(464, -73)
+scale = Vector2(1.5, 1.5)
+
+[node name="platform2" parent="." instance=ExtResource("2_as5ut")]
+position = Vector2(-442, -73)
+scale = Vector2(1.5, 1.5)
+
+[node name="platform3" parent="." instance=ExtResource("2_as5ut")]
+position = Vector2(0, -272)
+scale = Vector2(1.5, 1.5)
